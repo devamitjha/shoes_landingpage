@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product landingpage</title>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="product_container">
+
+            <div class="product_">
+
+                <header>
+                    <div class="logo">D<span>a</span></div>
+                    <div class="navbar">
+                        <div class="nav">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="search_">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="product_wrapper">
+                    <div class="brand_title">
+                        <span>BRANDS.</span>
+                        <h1>Shoes.</h1>
+                    </div>
+                    <div class="product_img">
+                        <img src="images/shoe.png">
+                        <div class="bg_wrapper"></div>
+                    </div>
+                </div>
+                <div class="bottom_navigaiton">
+                    <div class="slider_nav">
+                        <div class="item prev">
+                            <i class="fa fa-angle-left"></i>
+                        </div>
+                        <div class="item next">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </div>
+                    <div class="bottom_nav">
+                        <div class="bottom_menu">
+                            <a href="#">Accounts.</a>
+                            <a href="#">Customer area.</a>
+                        </div>
+                        <div class="social">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="product_info_container">
+            <div class="product_info">
+                <div class="info_">
+                    <span>01.</span>
+                    <h2>Lorem <br>ipsum dolor <br>sit amet.</h2>
+                    <a href="#">Read More.</a>
+                </div>
+                <div class="model_">
+                    <img src="images/model_2.jpg">
+                </div>
+            </div>
+            <div class="slider_wrapper">
+                <div class="slider_text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem maxime accusamus consequuntur ipsum
+                    deleniti? Vitae.
+                </div>
+                <div class="slider_cta">Shop Now</div>
+                <div class="dot">
+                    <span></span>
+                    <span class="active"></span>
+                    <span></span>
+                </div>
+                <div class="indicator">
+                    <span>01.</span>
+                    <span class="progressBar">
+                        <span></span>
+                    </span>
+                    <span>03.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const timeline = gsap.timeline();
+        const timeline_2 = gsap.timeline();
+
+        timeline.from([".product_container", ".product_info_container"], {
+            duration: 1.2,
+            height: 0,
+            ease: "power3.inOut",
+            stagger: {
+                amount: .3
+            }
+        }).from([".logo", ".nav", ".search_"], {
+            delay: -0.2,
+            y: 16,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.inOut",
+            stagger: {
+                amount: .3
+            }
+        })
+            .from([".brand_title span", ".brand_title h1"], {
+                delay: -0.4,
+                y: 80,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: {
+                    amount: .3
+                }
+            })
+            .from(".bg_wrapper ", {
+                duration: 1,
+                delay: -.3,
+                scaleX: 0,
+                transformOrigin: "left",
+                ease: "expo.out"
+            }).to(".bg_wrapper ", {
+                duration: .9,
+                delay: 0.2,
+                scaleX: 0,
+                transformOrigin: "right",
+                ease: "expo.In"
+            }).from(".product_img img", {
+                delay: -0.3,
+                x: 30,
+                opacity: 0,
+                duraiton: 0.8,
+                ease: "expo.out",
+            })
+            .from([".slider_nav", ".prev", ".next", ".bottom_nav", ".bottom_menu a", ".social .fa"], {
+                delay: -0.4,
+                y: 80,
+                opacity: 0,
+                duraiton: 0.8,
+                ease: "expo.out",
+                stagger: {
+                    amount: .2
+                }
+            });
+
+        timeline_2.from(".model_", {
+            delay: 2.8,
+            x: 80,
+            opacity: 0,
+            duraiton: 0.8,
+            ease: "power3.out",
+        }).from([".info_", ".info_ span", ".info_ h2", ".info_ a"], {
+            delay: -0.4,
+            x: 80,
+            opacity: 0,
+            duraiton: 0.8,
+            ease: "power3.out",
+            stagger: {
+                amount: .2
+            }
+        }).from([".slider_text", ".slider_cta", ".indicator"], {
+            delay: -0.4,
+            y: 80,
+            opacity: 0,
+            duraiton: 0.8,
+            ease: "power3.out",
+            stagger: {
+                amount: .2
+            }
+        })
+            .from([".dot span"], {
+                delay: -0.4,
+                x: 80,
+                opacity: 0,
+                duraiton: 0.8,
+                ease: "power3.out",
+                stagger: {
+                    amount: .2
+                }
+            })
+    </script>
+</body>
+
+</html>
